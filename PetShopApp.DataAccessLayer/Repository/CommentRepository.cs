@@ -16,14 +16,14 @@ namespace PetShopApp.DataAccessLayer.Repository
         {
         }
 
-        public async Task<Comment> GetWithProductByIdAsync(Guid comId)
+        public async Task<Comment> GetWithProductByIdAsync(int comId)
         {
 
             var comment = _db.Comments.Include(s => s.Product).FirstOrDefaultAsync(s => s.Id == comId);
             return (await comment)!;
         }
 
-        public async Task<Comment> GetWithUserByIdAsync(Guid comId)
+        public async Task<Comment> GetWithUserByIdAsync(int comId)
         {
             var comment=_db.Comments.Include(s=>s.User).FirstOrDefaultAsync(s => s.Id == comId);
             return (await comment);

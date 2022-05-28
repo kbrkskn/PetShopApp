@@ -9,7 +9,7 @@ namespace PetShopApp.Core.IntRepository
 {
     public interface IProductFeatureRepository : IRepository<ProductFeature>
     {
-        Task<ProductFeature> GetWithProductByIdAsync(Guid profId);
+        Task<ProductFeature> GetWithProductByIdAsync(int profId);
     
     }
 }

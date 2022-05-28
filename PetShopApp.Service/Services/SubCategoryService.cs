@@ -16,12 +16,17 @@ namespace PetShopApp.Service.Services
         {
         }
 
-        public async Task<SubCategory> GetWithCategoryByIdAsync(Guid scatId)
+        public async Task<IEnumerable<SubCategory>> GetAllWithCategoryAsync()
+        {
+            return await _unit.SubCategory.GetAllWithCategoryAsync();
+        }
+
+        public async Task<SubCategory> GetWithCategoryByIdAsync(int scatId)
         {
             return await _unit.SubCategory.GetWithCategoryByIdAsync(scatId);
         }
 
-        public async Task<SubCategory> GetWithProductByIdAsync(Guid scatId)
+        public async Task<SubCategory> GetWithProductByIdAsync(int scatId)
         {
             return await _unit.SubCategory.GetWithProductByIdAsync(scatId);
         }

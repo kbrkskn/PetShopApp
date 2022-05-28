@@ -29,8 +29,8 @@ namespace PetShopApp.API.Controllers
             return Ok(_mapper.Map<IEnumerable<CategoryDto>>(cat));
         }
 
-        [HttpGet("{id:guid}")]
-        public async Task<IActionResult> GetById(Guid id)//Girilen id ye ait kategorileri listeler
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetById(int id)//Girilen id ye ait kategorileri listeler
         {
             var cat = await _catService.GetByIdAsync(id);
             return Ok(_mapper.Map<CategoryDto>(cat));
@@ -51,14 +51,14 @@ namespace PetShopApp.API.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Remove(Guid id)//Bunu kullanmayabilirim çünkü pasif olacak silinmeyecek
+        public IActionResult Remove(int id)//Bunu kullanmayabilirim çünkü pasif olacak silinmeyecek
         {
             var cat = _catService.GetByIdAsync(id).Result;
             _catService.Remove(cat);
             return NoContent();
         }
 
-        [HttpDelete("{name:alpha}")]
+        [HttpDelete("{name}")]
         public IActionResult RemoveByName(string name)
         {
             var cat=_catService.Where(s=>s.Name== name).Result;
@@ -67,8 +67,8 @@ namespace PetShopApp.API.Controllers
         }
 
 
-        [HttpGet("{id:guid}/subcategories")]
-        public async Task<IActionResult> GetWithSubCategoryById(Guid id)
+        [HttpGet("{id:int}/subcategories")]
+        public async Task<IActionResult> GetWithSubCategoryById(int id)
         {
             var cat = await _catService.GetWithSubCategoryByIdAsync(id);
             return Ok(_mapper.Map<CategoryWithSubCategoriesDto>(cat));

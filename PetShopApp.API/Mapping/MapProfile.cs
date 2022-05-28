@@ -14,6 +14,11 @@ namespace PetShopApp.API.Mapping
             CreateMap<Category, CategoryWithSubCategoriesDto>();
             CreateMap<CategoryWithSubCategoriesDto, Category>();
 
+            CreateMap<Category, CategoryWithProductsDto>();
+            CreateMap<CategoryWithProductsDto, Category>();
+
+
+
             CreateMap<SubCategory, SubCategoryDto>();
             CreateMap<SubCategoryDto, SubCategory>();
 
@@ -23,29 +28,45 @@ namespace PetShopApp.API.Mapping
             CreateMap<SubCategory, SubCategoryWithProductsDto>();
             CreateMap<SubCategoryWithProductsDto, SubCategory>();
 
+
+
             CreateMap<Product, ProductDto>();
             CreateMap<ProductDto, Product>();
 
             CreateMap<Product, ProductWithSubCategoryDto>();
             CreateMap<ProductWithSubCategoryDto, Product>();
 
+            CreateMap<Product, ProductWithCommentsDto>();
+            CreateMap<ProductWithCommentsDto, Product>();
+
+            CreateMap<ProductFeature, ProductFeatureDto>();
+            CreateMap<ProductFeatureDto, ProductFeature>();
+
+
 
 
             CreateMap<Comment, CommentDto>();
             CreateMap<CommentDto, Comment>();
 
+            CreateMap<Comment, CommentWithProductDto>();
+            CreateMap<CommentWithProductDto, Comment>();
+
+
+
             CreateMap<Order, OrderDto>();
             CreateMap<OrderDto, Order>();
 
             
-
-            CreateMap<Product, ProductFeatureDto>();
-            CreateMap<ProductFeatureDto, ProductFeature>();
-
           
 
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
+
+            CreateMap<User, UserWithOrdersDto>();
+            CreateMap<UserWithOrdersDto, User>();
+
+            CreateMap<User, UserWithCommentsDto>();
+            CreateMap<UserWithCommentsDto, User>();
 
         }
     }

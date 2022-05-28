@@ -21,17 +21,22 @@ namespace PetShopApp.Service.Services
            return _unit.Product.GetAllWithSubCategoryAsync();
         }
 
-        public async Task<Product> GetWithOrderByIdAsync(Guid proId)
+        public async Task<Product> GetWithCommentByIdAsync(int proId)
+        {
+            return await _unit.Product.GetWithCommentByIdAsync(proId);
+        }
+
+        public async Task<Product> GetWithOrderByIdAsync(int proId)
         {
             return await _unit.Product.GetWithOrderByIdAsync(proId);
         }
 
-        public async Task<Product> GetWithProductFeatureByIdAsync(Guid proId)
+        public async Task<Product> GetWithProductFeatureByIdAsync(int proId)
         {
             return await _unit.Product.GetWithProductFeatureByIdAsync(proId);
         }
 
-        public async Task<Product> GetWithSubCategoryByIdAsync(Guid proId)
+        public async Task<Product> GetWithSubCategoryByIdAsync(int proId)
         {
             return await _unit.Product.GetWithSubCategoryByIdAsync(proId);
         }

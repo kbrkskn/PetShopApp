@@ -9,7 +9,7 @@ namespace PetShopApp.Core.IntService
 {
     public interface IUserService:IService<User>
     {
-        Task<User> GetWithOrderByIdAsync(Guid userId);
-        Task<User> GetWithCommentByIdAsync(Guid userId);
+        Task<User> GetWithOrderByIdAsync(int userId);
+        Task<User> GetWithCommentByIdAsync(int userId);
     }
 }

@@ -26,8 +26,8 @@ namespace PetShopApp.API.Controllers
             return Ok(_mapper.Map<IEnumerable<SubCategoryDto>>(subcat));
         }
 
-        [HttpGet("{id:guid}")]
-        public async Task<IActionResult> GetById(Guid id)
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetById(int id)
         {
             var scat = await _scatService.GetByIdAsync(id);
             return Ok(_mapper.Map<SubCategoryDto>(scat));
@@ -48,8 +48,8 @@ namespace PetShopApp.API.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id:guid}")]
-        public IActionResult Remove(Guid id)
+        [HttpDelete("{id:int}")]
+        public IActionResult Remove(int id)
         {
             var scat = _scatService.GetByIdAsync(id).Result;
             _scatService.Remove(scat);
@@ -64,26 +64,26 @@ namespace PetShopApp.API.Controllers
             return NoContent();
         }
 
-        [HttpGet("{id:guid}/category")]
-        public async Task<IActionResult> GetWithCategoryById(Guid id)
+        [HttpGet("{id:int}/category")]
+        public async Task<IActionResult> GetWithCategoryById(int id)
         {
             var scat = await _scatService.GetWithCategoryByIdAsync(id);
             return Ok(_mapper.Map<SubCategoryWithCategoryDto>(scat));
         }
-        //[HttpGet("{id:guid}/products")]--DENEE
-        //public async Task<IActionResult> GetWithProductById(Guid id)
-        //{
-        //    var scat = await _scatService.GetWithProductByIdAsync(id);
-        //    return Ok(_mapper.Map<SubCategoryWithProductsDto>(scat));
-        //}
+        [HttpGet("{id:int}/products")]//--DENEE
+        public async Task<IActionResult> GetWithProductById(int id)
+        {
+            var scat = await _scatService.GetWithProductByIdAsync(id);
+            return Ok(_mapper.Map<SubCategoryWithProductsDto>(scat));
+        }
 
 
-        //[HttpGet("categoryall")]//Kullanmayacağım ??
-        //public async Task<IActionResult> GetAllWİthCategory()
-        //{
-        //    var scat = await _scatService.GetAllWithCategoryAsync();
-        //    return Ok(_mapper.Map<IEnumerable<SubCategoryWithCategoryDto>>(scat));
-        //}
+        [HttpGet("categoryall")]
+        public async Task<IActionResult> GetAllWithCategory()
+        {
+            var scat = await _scatService.GetAllWithCategoryAsync();
+            return Ok(_mapper.Map<IEnumerable<SubCategoryWithCategoryDto>>(scat));
+        }
 
     }
 }

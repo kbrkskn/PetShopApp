@@ -9,7 +9,7 @@ namespace PetShopApp.Core.IntRepository
 {
     public interface IOrderRepository:IRepository<Order>
     {
-        Task<Order> GetWithProductByIdAsync(Guid orderId);
-        Task<Order> GetWithUserByIdAsync(Guid orderId);
+        Task<Order> GetWithProductByIdAsync(int orderId);
+        Task<Order> GetWithUserByIdAsync(int orderId);
     }
 }

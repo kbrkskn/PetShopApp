@@ -16,13 +16,13 @@ namespace PetShopApp.DataAccessLayer.Repository
         {
         }
 
-        public async Task<Order> GetWithProductByIdAsync(Guid orderId)
+        public async Task<Order> GetWithProductByIdAsync(int orderId)
         {
             var order = _db.Orders.Include(s => s.Product).FirstOrDefaultAsync(s => s.Id == orderId);
             return (await order)!;
         }
 
-        public async Task<Order> GetWithUserByIdAsync(Guid orderId)
+        public async Task<Order> GetWithUserByIdAsync(int orderId)
         {
             var order = _db.Orders.Include(s => s.User).FirstOrDefaultAsync(s => s.Id == orderId);
             return (await order)!;

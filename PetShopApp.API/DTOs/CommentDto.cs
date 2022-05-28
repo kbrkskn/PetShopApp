@@ -4,7 +4,7 @@ namespace PetShopApp.API.DTOs
 {
     public class CommentDto
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         [Required(ErrorMessage = "{0} alanı zorunludur.")]
         public string Text { get; set; }
         public DateTime? CreatedDate { get; set; }
@@ -12,7 +12,7 @@ namespace PetShopApp.API.DTOs
         public bool IsDeleted { get; set; } = false;
 
 
-        public Guid UserID { get; set; }
-        public Guid ProductID { get; set; }
+        public int UserID { get; set; }
+        public int ProductID { get; set; }
     }
 }

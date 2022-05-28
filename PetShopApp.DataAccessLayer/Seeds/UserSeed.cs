@@ -13,17 +13,17 @@ namespace PetShopApp.DataAccessLayer.Seeds
     {
 
         //private readonly int[] _ids;
-        private readonly Guid[] _guids;
-        public UserSeed(Guid[] guids)
+        private readonly int[] _ids;
+        public UserSeed(int[] ids)
         {
-            _guids = guids;
+            _ids = ids;
         }
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.HasData(
-                new User { Id=_guids[21], Name="Kübra", LastName="Keskin", Email="kbrkskn@gmail.com", Password="123456",Phone="05362879963", IsActive=true, IsAdmin=false },
-                new User { Id = _guids[22], Name = "Eymen", LastName = "Keskin", Email = "eymen@gmail.com", Password = "123456", Phone = "05362879963", IsActive = true, IsAdmin = false },
-                new User { Id = _guids[23], Name = "Bahar", LastName = "Keskin", Email = "bhrkskn@gmail.com", Password = "123456", Phone = "05362879963", IsActive = true, IsAdmin = false }
+                new User { Id=_ids[21], Name="Kübra", LastName="Keskin", Email="kbrkskn@gmail.com", Password="123456",Phone="05362879963", IsActive=true, IsAdmin=false },
+                new User { Id = _ids[22], Name = "Eymen", LastName = "Keskin", Email = "eymen@gmail.com", Password = "123456", Phone = "05362879963", IsActive = true, IsAdmin = false },
+                new User { Id = _ids[23], Name = "Bahar", LastName = "Keskin", Email = "bhrkskn@gmail.com", Password = "123456", Phone = "05362879963", IsActive = true, IsAdmin = false }
                 );
         }
     }

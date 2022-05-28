@@ -9,6 +9,6 @@ namespace PetShopApp.Core.IntService
 {
     public interface IProductFeatureService:IService<ProductFeature>
     {
-        Task<ProductFeature> GetWithProductByIdAsync(Guid profId);
+        Task<ProductFeature> GetWithProductByIdAsync(int profId);
     }
 }

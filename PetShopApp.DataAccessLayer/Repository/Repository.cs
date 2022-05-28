@@ -14,6 +14,8 @@ namespace PetShopApp.DataAccessLayer.Repository
     {
         protected readonly PetShopDbContext _db;
         private readonly DbSet<T> _dbSet;
+
+
         public Repository(PetShopDbContext db)
         {
             _db = db;
@@ -52,7 +54,7 @@ namespace PetShopApp.DataAccessLayer.Repository
         }
 
 
-        public async Task<T> GetByIdAsync(Guid id)
+        public async Task<T> GetByIdAsync(int id)
         {
             return (await _dbSet.FindAsync(id))!;
         }
@@ -85,7 +87,7 @@ namespace PetShopApp.DataAccessLayer.Repository
 
         public async Task<IEnumerable<T>> Where(Expression<Func<T, bool>> predicate)
         {
-           return await _dbSet.Where(predicate).ToListAsync();
+            return await _dbSet.Where(predicate).ToListAsync();
         }
     }
 }

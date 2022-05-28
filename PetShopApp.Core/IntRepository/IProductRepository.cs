@@ -9,9 +9,10 @@ namespace PetShopApp.Core.IntRepository
 {
     public interface IProductRepository:IRepository<Product>
     {
-        Task<Product> GetWithProductFeatureByIdAsync(Guid proId);
-        Task<Product> GetWithOrderByIdAsync(Guid proId);
-        Task<Product> GetWithSubCategoryByIdAsync(Guid proId);
+        Task<Product> GetWithProductFeatureByIdAsync(int proId);
+        Task<Product> GetWithOrderByIdAsync(int proId);
+        Task<Product> GetWithCommentByIdAsync(int proId);
+        Task<Product> GetWithSubCategoryByIdAsync(int proId);
         Task<IEnumerable<Product>> GetAllWithSubCategoryAsync();
     }
 }

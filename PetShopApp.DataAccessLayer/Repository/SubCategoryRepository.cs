@@ -16,16 +16,22 @@ namespace PetShopApp.DataAccessLayer.Repository
         {
         }
 
-        public async Task<SubCategory> GetWithCategoryByIdAsync(Guid scatId)
+        public async Task<SubCategory> GetWithCategoryByIdAsync(int scatId)
         {
             var scategory = _db.SubCategories.Include(s => s.Category).FirstOrDefaultAsync(s => s.Id == scatId);
             return (await scategory)!;
         }
 
-        public async Task<SubCategory> GetWithProductByIdAsync(Guid scatId)
+        public async Task<SubCategory> GetWithProductByIdAsync(int scatId)
         {
             var scategory = _db.SubCategories.Include(s =>s.Products).FirstOrDefaultAsync(s => s.Id == scatId);
             return (await scategory)!;
+        }
+
+        public async Task<IEnumerable<SubCategory>> GetAllWithCategoryAsync()
+        {
+            var scategories = _db.SubCategories.Include(s => s.Category).ToListAsync();
+            return (await scategories);
         }
     }
 }

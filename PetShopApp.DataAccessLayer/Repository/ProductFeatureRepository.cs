@@ -15,7 +15,7 @@ namespace PetShopApp.DataAccessLayer.Repository
         {
         }
 
-        public async Task<ProductFeature> GetWithProductByIdAsync(Guid profId)
+        public async Task<ProductFeature> GetWithProductByIdAsync(int profId)
         {
             var prof = _db.ProductFeatures.Include(s => s.Product).FirstOrDefaultAsync(s => s.Id == profId);
             return (await prof)!;

@@ -12,64 +12,64 @@ namespace PetShopApp.DataAccessLayer.Seeds
     public class ProductFeatureSeed : IEntityTypeConfiguration<ProductFeature>
     {
        // private readonly int[] _ids;
-        private readonly Guid[] _guids;
-        public ProductFeatureSeed(Guid[] guids)
+        private readonly int[] _ids;
+        public ProductFeatureSeed(int[] ids)
         {
-            _guids = guids;
+            _ids = ids;
         }
         public void Configure(EntityTypeBuilder<ProductFeature> builder)
         {
             builder.HasData(
                 new ProductFeature
                 {
-                    Id = _guids[15],
+                    Id = _ids[15],
                     Feature = "Açıklama 1",
-                    ProductID = _guids
+                    ProductID = _ids
                 [12],
                     CreatedDate = DateTime.Now,
                     ModifiedDate = DateTime.Now
                 },
                 new ProductFeature
                 {
-                    Id = _guids[16],
+                    Id = _ids[16],
                     Feature = "Açıklama 2",
-                    ProductID = _guids
+                    ProductID = _ids
                 [12],
                     CreatedDate = DateTime.Now,
                     ModifiedDate = DateTime.Now
                 },
                 new ProductFeature
                 {
-                    Id = _guids[17],
+                    Id = _ids[17],
                     Feature = "Açıklama 1",
-                    ProductID = _guids
+                    ProductID = _ids
                 [13],
                     CreatedDate = DateTime.Now,
                     ModifiedDate = DateTime.Now
                 },
                 new ProductFeature
                 {
-                    Id = _guids[18],
+                    Id = _ids[18],
                     Feature = "Açıklama 2",
-                    ProductID = _guids
+                    ProductID = _ids
                 [13],
                     CreatedDate = DateTime.Now,
                     ModifiedDate = DateTime.Now
                 },
                 new ProductFeature
                 {
-                    Id = _guids[19],
+                    Id = _ids[19],
                     Feature = "Açıklama 1",
-                    ProductID = _guids
+                    ProductID = _ids
                 [14],
                     CreatedDate = DateTime.Now,
                     ModifiedDate = DateTime.Now
                 },
                 new ProductFeature
                 {
-                    Id = _guids[20],
+                    Id = _ids[20],
                     Feature = "Açıklama 2",
-                    ProductID = _guids
+                    ProductID = _ids
                 [14],
                     CreatedDate = DateTime.Now,
                     ModifiedDate = DateTime.Now

@@ -9,7 +9,7 @@ namespace PetShopApp.Core.Models
 {
     public class Comment
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Text { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
@@ -19,10 +19,10 @@ namespace PetShopApp.Core.Models
 
         //Foreign Key
         [ForeignKey("User")]
-        public Guid UserID { get; set; }
+        public int UserID { get; set; }
         public virtual User User { get; set; }
         [ForeignKey("Product")]
-        public Guid ProductID { get; set; }
+        public int ProductID { get; set; }
         public virtual Product Product { get; set; }
     }
 }

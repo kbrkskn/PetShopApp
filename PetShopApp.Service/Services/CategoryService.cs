@@ -16,7 +16,8 @@ namespace PetShopApp.Service.Services
         {
         }
 
-        public async Task<Category> GetWithSubCategoryByIdAsync(Guid catId)
+
+        public async Task<Category> GetWithSubCategoryByIdAsync(int catId)
         {
             return await _unit.Category.GetWithSubCategoryByIdAsync(catId);
         }

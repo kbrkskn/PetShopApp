@@ -27,30 +27,30 @@ namespace PetShopApp.DataAccessLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            Guid g1 = Guid.NewGuid();
-            Guid g2 = Guid.NewGuid();
-            Guid g3 = Guid.NewGuid();
-            Guid g4 = Guid.NewGuid();
-            Guid g5 = Guid.NewGuid();
-            Guid g6 = Guid.NewGuid();
-            Guid g7 = Guid.NewGuid();
-            Guid g8 = Guid.NewGuid();
-            Guid g9 = Guid.NewGuid();
-            Guid g10 = Guid.NewGuid();
-            Guid g11 = Guid.NewGuid();
-            Guid g12 = Guid.NewGuid();
-            Guid g13 = Guid.NewGuid(); 
-            Guid g14 = Guid.NewGuid();
-            Guid g15 = Guid.NewGuid();
-            Guid g16 = Guid.NewGuid();
-            Guid g17 = Guid.NewGuid();
-            Guid g18 = Guid.NewGuid();
-            Guid g19 = Guid.NewGuid();
-            Guid g20 = Guid.NewGuid();
-            Guid g21 = Guid.NewGuid();
-            Guid g22 = Guid.NewGuid();
-            Guid g23 = Guid.NewGuid();
-            Guid g24 = Guid.NewGuid();
+            int g1 = 1;
+            int g2 = 2;
+            int g3 = 3;
+            int g4 = 4;
+            int g5 = 5;
+            int g6 = 6;
+            int g7 = 7;
+            int g8 = 8;
+            int g9 = 9;
+            int g10 = 10;
+            int g11 = 11;
+            int g12 = 12;
+            int g13 = 13;
+            int g14 = 14;
+            int g15 = 15;
+            int g16 = 16;
+            int g17 = 17;
+            int g18 = 18;
+            int g19 = 19;
+            int g20 = 20;
+            int g21 = 21;
+            int g22 = 22;
+            int g23 = 23;
+            int g24 = 24;
 
 
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
@@ -63,12 +63,12 @@ namespace PetShopApp.DataAccessLayer
 
 
 
-            modelBuilder.ApplyConfiguration(new CategorySeed(new Guid[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
-            modelBuilder.ApplyConfiguration(new SubCategorySeed(new Guid[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
-            modelBuilder.ApplyConfiguration(new ProductSeed(new Guid[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
-            modelBuilder.ApplyConfiguration(new ProductFeatureSeed(new Guid[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
-            modelBuilder.ApplyConfiguration(new UserSeed(new Guid[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
-            modelBuilder.ApplyConfiguration(new CommentSeed(new Guid[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
+            modelBuilder.ApplyConfiguration(new CategorySeed(new int[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
+            modelBuilder.ApplyConfiguration(new SubCategorySeed(new int[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
+            modelBuilder.ApplyConfiguration(new ProductSeed(new int[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
+            modelBuilder.ApplyConfiguration(new ProductFeatureSeed(new int[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
+            modelBuilder.ApplyConfiguration(new UserSeed(new int[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
+            modelBuilder.ApplyConfiguration(new CommentSeed(new int[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));
         }
 
     }

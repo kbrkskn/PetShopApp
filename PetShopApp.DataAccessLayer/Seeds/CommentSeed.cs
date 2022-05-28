@@ -12,17 +12,17 @@ namespace PetShopApp.DataAccessLayer.Seeds
     public class CommentSeed : IEntityTypeConfiguration<Comment>
     {
         //private readonly int[] _ids;
-        private readonly Guid[] _guids;
-        public CommentSeed(Guid[] guids)
+        private readonly int[] _ids;
+        public CommentSeed(int[] ids)
         {
-            _guids = guids;
+            _ids = ids;
         }
         public void Configure(EntityTypeBuilder<Comment> builder)
         {
             builder.HasData(
-                new Comment { Id = Guid.NewGuid(), Text = "Yorummmmm", UserID = _guids[21], CreatedDate=DateTime.Now,ModifiedDate=DateTime.Now, IsDeleted=false, ProductID=_guids[13] },
-                new Comment { Id = Guid.NewGuid(), Text = "Yorummmmm", UserID = _guids[21], CreatedDate = DateTime.Now, ModifiedDate = DateTime.Now, IsDeleted = false, ProductID = _guids[12] },
-                 new Comment { Id = Guid.NewGuid(), Text = "Yorummmmm", UserID = _guids[22], CreatedDate = DateTime.Now, ModifiedDate = DateTime.Now, IsDeleted = false, ProductID = _guids[12] }
+                new Comment { Id = 100, Text = "Yorummmmm", UserID = _ids[21], CreatedDate=DateTime.Now,ModifiedDate=DateTime.Now, IsDeleted=false, ProductID=_ids[13] },
+                new Comment { Id = 101, Text = "Yorummmmm", UserID = _ids[21], CreatedDate = DateTime.Now, ModifiedDate = DateTime.Now, IsDeleted = false, ProductID = _ids[12] },
+                 new Comment { Id = 102, Text = "Yorummmmm", UserID = _ids[22], CreatedDate = DateTime.Now, ModifiedDate = DateTime.Now, IsDeleted = false, ProductID = _ids[12] }
                 );
         }
 }

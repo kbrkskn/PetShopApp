@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace PetShopApp.Service.Services
 {
-    public class OrderService : Service<Order>, IOrderSevice
+    public class OrderService : Service<Order>, IOrderService
     {
         public OrderService(IUnitOfWork unit, IRepository<Order> repo) : base(unit, repo)
         {
         }
 
-        public async Task<Order> GetWithProductByIdAsync(Guid orderId)
+        public async Task<Order> GetWithProductByIdAsync(int orderId)
         {
             return await _unit.Order.GetWithProductByIdAsync(orderId);
         }
 
-        public async Task<Order> GetWithUserByIdAsync(Guid orderId)
+        public async Task<Order> GetWithUserByIdAsync(int orderId)
         {
             return await _unit.Order.GetWithUserByIdAsync(orderId);
         }

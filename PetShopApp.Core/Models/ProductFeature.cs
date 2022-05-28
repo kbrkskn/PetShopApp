@@ -8,14 +8,14 @@ namespace PetShopApp.Core.Models
 {
     public class ProductFeature
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Feature { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
         //public int CreatedId { get; set; }
 
         //Foreign Key
-        public Guid ProductID { get; set; }
+        public int ProductID { get; set; }
         public virtual Product Product { get; set; }
         
 

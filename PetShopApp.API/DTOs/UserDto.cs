@@ -4,7 +4,7 @@ namespace PetShopApp.API.DTOs
 {
     public class UserDto
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         [Required(ErrorMessage = "{0} alanı zorunludur.")]
         public string Name { get; set; }
         [Required(ErrorMessage = "{0} alanı zorunludur.")]

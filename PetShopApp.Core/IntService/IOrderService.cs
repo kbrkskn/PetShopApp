@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace PetShopApp.Core.IntService
 {
-    public interface IOrderSevice:IService<Order>
+    public interface IOrderService : IService<Order>
     {
-        Task<Order> GetWithProductByIdAsync(Guid orderId);
-        Task<Order> GetWithUserByIdAsync(Guid orderId);
+        Task<Order> GetWithProductByIdAsync(int orderId);
+        Task<Order> GetWithUserByIdAsync(int orderId);
+    
     }
 }

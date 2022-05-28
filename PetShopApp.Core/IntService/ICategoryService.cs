@@ -9,6 +9,6 @@ namespace PetShopApp.Core.IntService
 {
     public interface ICategoryService:IService<Category>
     {
-        Task<Category> GetWithSubCategoryByIdAsync(Guid catId);
+        Task<Category> GetWithSubCategoryByIdAsync(int catId);
     }
 }

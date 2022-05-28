@@ -16,12 +16,12 @@ namespace PetShopApp.Service.Services
         {
         }
 
-        public async Task<Comment> GetWithProductByIdAsync(Guid comId)
+        public async Task<Comment> GetWithProductByIdAsync(int comId)
         {
             return await _unit.Comment.GetWithProductByIdAsync(comId);
         }
 
-        public async Task<Comment> GetWithUserByIdAsync(Guid comId)
+        public async Task<Comment> GetWithUserByIdAsync(int comId)
         {
             return await _unit.Comment.GetWithUserByIdAsync(comId);
         }

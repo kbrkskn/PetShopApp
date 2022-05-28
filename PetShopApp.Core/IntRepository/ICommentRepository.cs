@@ -9,7 +9,7 @@ namespace PetShopApp.Core.IntRepository
 {
     public interface ICommentRepository
     {
-        Task<Comment> GetWithProductByIdAsync(Guid comId);
-        Task<Comment> GetWithUserByIdAsync(Guid comId);
+        Task<Comment> GetWithProductByIdAsync(int comId);
+        Task<Comment> GetWithUserByIdAsync(int comId);
     }
 }

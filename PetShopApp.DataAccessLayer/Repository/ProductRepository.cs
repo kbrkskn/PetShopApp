@@ -16,19 +16,19 @@ namespace PetShopApp.DataAccessLayer.Repository
         {
         }
 
-        public async Task<Product> GetWithOrderByIdAsync(Guid proId)
+        public async Task<Product> GetWithOrderByIdAsync(int proId)
         {
             var product = _db.Products.Include(s => s.Orders).FirstOrDefaultAsync(s => s.Id == proId);
             return (await product)!;
         }
 
-        public async Task<Product> GetWithProductFeatureByIdAsync(Guid proId)
+        public async Task<Product> GetWithProductFeatureByIdAsync(int proId)
         {
             var product = _db.Products.Include(s => s.ProductFeatures).FirstOrDefaultAsync(s => s.Id == proId);
             return (await product)!;
         }
 
-        public async Task<Product> GetWithSubCategoryByIdAsync(Guid proId)
+        public async Task<Product> GetWithSubCategoryByIdAsync(int proId)
         {
             var product = _db.Products.Include(s => s.SubCategory).FirstOrDefaultAsync(s => s.Id == proId);
             return (await product)!;
@@ -36,8 +36,14 @@ namespace PetShopApp.DataAccessLayer.Repository
 
         public async Task<IEnumerable<Product>> GetAllWithSubCategoryAsync()
         {
-            var products = PetShopDbContext.Products.Include(s => s.SubCategory).ToListAsync();
+            var products = _db.Products.Include(s => s.SubCategory).ToListAsync();
             return (await products);
+        }
+
+        public async Task<Product> GetWithCommentByIdAsync(int proId)
+        {
+            var product= _db.Products.Include(s => s.Comments).FirstOrDefaultAsync(s=>s.Id==proId);
+            return (await product);
         }
     }
 }

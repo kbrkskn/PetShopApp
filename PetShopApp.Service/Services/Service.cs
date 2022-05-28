@@ -56,7 +56,7 @@ namespace PetShopApp.Service.Services
             return await _repo.GetAllAsync();
         }
 
-        public async Task<T> GetByIdAsync(Guid id)
+        public async Task<T> GetByIdAsync(int id)
         {
             return await _repo.GetByIdAsync(id);
         }

@@ -28,8 +28,8 @@ namespace PetShopApp.API.Controllers
         }
 
 
-       [HttpGet("{id:guid}")]
-       public async Task<IActionResult> GetById(Guid id)
+       [HttpGet("{id:int}")]
+       public async Task<IActionResult> GetById(int id)
         {
             var pro =await _proService.GetByIdAsync(id);
             return Ok(_mapper.Map<ProductDto>(pro));
@@ -50,7 +50,7 @@ namespace PetShopApp.API.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Remove(Guid id)
+        public IActionResult Remove(int id)
         {
             var pro = _proService.GetByIdAsync(id).Result;
             _proService.Remove(pro);
@@ -65,19 +65,27 @@ namespace PetShopApp.API.Controllers
             return NoContent();
         }
 
-        [HttpGet("{id:guid}/subcategory")]
-        public async Task<IActionResult> GetWithSubCategoryById(Guid id)
+        [HttpGet("{id:int}/subcategory")]
+        public async Task<IActionResult> GetWithSubCategoryById(int id)
         {
             var pro = await _proService.GetWithSubCategoryByIdAsync(id);
             return Ok(_mapper.Map<ProductWithSubCategoryDto>(pro));
         }
 
-        [HttpGet("subcategoryall")]
+        [HttpGet("subcategoryall")]//Çalışmadı
         public async Task<IActionResult> GetAllWithSubCategory()
         {
             var pro = await _proService.GetAllWithSubCategoryAsync();
             return Ok(_mapper.Map<IEnumerable<ProductWithSubCategoryDto>>(pro));
         }
+
+        [HttpGet("{id:int}/comments")]
+        public async Task<IActionResult> GetWithCommmentById(int id)
+        {
+            var pro = await _proService.GetWithCommentByIdAsync(id);
+            return Ok(_mapper.Map<ProductWithCommentsDto>(pro));
+        }
+
 
     }
 }

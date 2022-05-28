@@ -16,7 +16,7 @@ namespace PetShopApp.Service.Services
         {
         }
 
-        public async Task<ProductFeature> GetWithProductByIdAsync(Guid profId)
+        public async Task<ProductFeature> GetWithProductByIdAsync(int profId)
         {
             return await _unit.ProductFeature.GetWithProductByIdAsync(profId);
         }

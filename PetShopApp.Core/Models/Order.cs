@@ -8,16 +8,17 @@ namespace PetShopApp.Core.Models
 {
     public class Order
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
+        public int OrdersNo { get; set; }
         public DateTime? CreatedDate { get; set; }
 
         //Foreign Key
 
-        public Guid UserID { get; set; }
+        public int UserID { get; set; }
         public virtual User User { get; set; }
 
 
-        public Guid ProductID { get; set; }
+        public int ProductID { get; set; }
         public virtual Product Product { get; set; }
 
     }
