@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PetShopApp.Core.IntRepository
 {
-    public interface ICommentRepository
+    public interface ICommentRepository:IRepository<Comment>
     {
         Task<Comment> GetWithProductByIdAsync(int comId);
         Task<Comment> GetWithUserByIdAsync(int comId);

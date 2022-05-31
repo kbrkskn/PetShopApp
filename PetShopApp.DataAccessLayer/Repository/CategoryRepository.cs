@@ -22,10 +22,10 @@ namespace PetShopApp.DataAccessLayer.Repository
             return (await category)!;
         }
 
-        //public async Task<Category> GetWithProductByIdAsync(int catId)
-            
-        //{
-        //    var category = _db.Categories.Include(s => s.SubCategories).FirstOrDefaultAsync(s => s.Id == catId);
-        //}
+        public async Task<Category> GetWithProductByIdAsync(int catId)
+        {
+           var category=_db.Categories.Include(s=>s.Products).FirstOrDefaultAsync(s=>s.Id== catId);
+            return (await category)!;
+        }
     }
 }

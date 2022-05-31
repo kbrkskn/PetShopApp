@@ -2,6 +2,6 @@
 {
     public class ProductWithSubCategoryDto
     {
-        public SubCategoryDto SubCategory { get; set; }
+        public SubCategoryDto? SubCategory { get; set; }
     }
 }

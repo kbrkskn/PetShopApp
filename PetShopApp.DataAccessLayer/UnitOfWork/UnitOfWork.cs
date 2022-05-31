@@ -19,6 +19,9 @@ namespace PetShopApp.DataAccessLayer.UnitOfWork
         private IUserRepository _userRepository;
         private IProductFeatureRepository _productFeatureRepository;
         private ICommentRepository _commentRepository;
+        private IDiscountedProductRepository _discountedProductRepository;
+        
+
         public UnitOfWork(PetShopDbContext db)
         {
             _db = db;
@@ -40,6 +43,9 @@ namespace PetShopApp.DataAccessLayer.UnitOfWork
 
         public ICommentRepository Comment => _commentRepository ??= new CommentRepository(_db);
         public ICommentRepository CommentRepository { get; }
+
+        public IDiscountedProductRepository DiscountedProduct => _discountedProductRepository ??= new DiscountedProductRepository(_db);
+        public IDiscountedProductRepository DiscountedProductRepository { get; }
 
         public IProductFeatureRepository ProductFeature => _productFeatureRepository ??= new ProductFeatureRepository(_db);
 

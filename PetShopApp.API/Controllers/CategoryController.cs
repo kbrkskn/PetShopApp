@@ -74,6 +74,13 @@ namespace PetShopApp.API.Controllers
             return Ok(_mapper.Map<CategoryWithSubCategoriesDto>(cat));
         }
 
+        [HttpGet("{id:int}/products")]
+        public async Task<IActionResult> GetWithProductById(int id)
+        {
+            var cat = await _catService.GetWithProductByIdAsync(id);
+            return Ok(_mapper.Map<CategoryWithProductsDto>(cat));
+        }
+
 
     }
 

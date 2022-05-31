@@ -72,7 +72,7 @@ namespace PetShopApp.API.Controllers
             return Ok(_mapper.Map<ProductWithSubCategoryDto>(pro));
         }
 
-        [HttpGet("subcategoryall")]//Çalışmadı
+        [HttpGet("subcategoryall")]
         public async Task<IActionResult> GetAllWithSubCategory()
         {
             var pro = await _proService.GetAllWithSubCategoryAsync();
@@ -84,6 +84,20 @@ namespace PetShopApp.API.Controllers
         {
             var pro = await _proService.GetWithCommentByIdAsync(id);
             return Ok(_mapper.Map<ProductWithCommentsDto>(pro));
+        }
+
+        [HttpGet("{id:int}/category")]
+        public async Task<IActionResult> GetWithCategoryById(int id)
+        {
+            var pro = await _proService.GetWithCategoryByIdAsync(id);
+            return Ok(_mapper.Map<ProductWithCategoryDto>(pro));
+        }
+
+        [HttpGet("categoryall")]
+        public async Task<IActionResult> GetAllWithCategory()
+        {
+            var pro = await _proService.GetAllWithCategoryAsync();
+            return Ok(_mapper.Map<IEnumerable<ProductWithCategoryDto>>(pro));
         }
 
 

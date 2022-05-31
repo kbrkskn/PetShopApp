@@ -2,6 +2,6 @@
 {
     public class SubCategoryWithProductsDto:SubCategoryDto
     {
-        public ICollection<ProductDto> Products { get; set; }
+        public ICollection<ProductDto>? Products { get; set; }
     }
 }

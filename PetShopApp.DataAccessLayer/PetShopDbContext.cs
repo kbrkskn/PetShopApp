@@ -24,9 +24,17 @@ namespace PetShopApp.DataAccessLayer
         public DbSet<User> Users { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<DiscountedProduct> DiscountedProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<Product>().HasOne(a => a.SubCategory).WithMany(a => a.Products).HasForeignKey(e => e.SubCategoryID).OnDelete(DeleteBehavior.NoAction);
+            modelBuilder.Entity<Product>().HasOne(a => a.Category).WithMany(a => a.Products).HasForeignKey(e => e.CategoryID).OnDelete(DeleteBehavior.NoAction);
+
+
+
+
             int g1 = 1;
             int g2 = 2;
             int g3 = 3;
@@ -60,7 +68,6 @@ namespace PetShopApp.DataAccessLayer
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new CommentConfiguration());
             //modelBuilder.ApplyConfiguration(new OrderConfiguration());
-
 
 
             modelBuilder.ApplyConfiguration(new CategorySeed(new int[] { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24 }));

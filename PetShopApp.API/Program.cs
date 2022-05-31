@@ -18,12 +18,12 @@ builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ISubCategoryService, SubCategoryService>();
-builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<IProductFeatureService, ProductFeatureService>();
+builder.Services.AddScoped<IDiscountedProductService, DiscountedProductService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //builder.Services.AddTransient(typeof(IRepository<>), typeof(Repository<>));

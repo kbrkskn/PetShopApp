@@ -10,5 +10,6 @@ namespace PetShopApp.Core.IntRepository
     public interface ICategoryRepository:IRepository<Category>
     {
         Task<Category> GetWithSubCategoryByIdAsync(int catId); 
+        Task<Category> GetWithProductByIdAsync(int catId);
     }
 }

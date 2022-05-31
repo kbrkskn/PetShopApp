@@ -16,6 +16,7 @@ namespace PetShopApp.Core.IntUnitOfWork
         IUserRepository User { get; }
         ICommentRepository Comment { get; }
         IProductFeatureRepository ProductFeature { get; }
+        IDiscountedProductRepository DiscountedProduct { get; }
         Task CommitAsync();
         void Commit();
 

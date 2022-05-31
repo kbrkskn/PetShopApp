@@ -14,5 +14,9 @@ namespace PetShopApp.Core.IntRepository
         Task<Product> GetWithCommentByIdAsync(int proId);
         Task<Product> GetWithSubCategoryByIdAsync(int proId);
         Task<IEnumerable<Product>> GetAllWithSubCategoryAsync();
+        Task<Product> GetWithCategoryByIdAsync(int proId);
+        Task<IEnumerable<Product>> GetAllWithCategoryAsync();
+        Task<Product> GetWithDiscountedProductByIdAsync(int proId);
+        Task<IEnumerable<Product>> GetAllWithDiscountedProductAsync();
     }
 }

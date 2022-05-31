@@ -43,7 +43,31 @@ namespace PetShopApp.DataAccessLayer.Repository
         public async Task<Product> GetWithCommentByIdAsync(int proId)
         {
             var product= _db.Products.Include(s => s.Comments).FirstOrDefaultAsync(s=>s.Id==proId);
-            return (await product);
+            return (await product)!;
+        }
+
+        public async Task<Product> GetWithCategoryByIdAsync(int proId)
+        {
+           var product=_db.Products.Include(s=>s.Category).FirstOrDefaultAsync(s=>s.Id== proId);
+            return (await product)!;
+        }
+
+        public async Task<IEnumerable<Product>> GetAllWithCategoryAsync()
+        {
+            var products=_db.Products.Include(s=>s.Category).ToListAsync();
+            return (await products);
+        }
+
+        public async Task<Product> GetWithDiscountedProductByIdAsync(int proId)
+        {
+            var product=_db.Products.Include(s=>s.DiscountedProducts).FirstOrDefaultAsync(s=>s.Id==proId);
+            return (await product)!;
+        }
+
+        public async Task<IEnumerable<Product>> GetAllWithDiscountedProductAsync()
+        {
+            var products = _db.Products.Include(s => s.DiscountedProducts).ToListAsync();
+            return (await products);
         }
     }
 }

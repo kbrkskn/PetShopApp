@@ -2,6 +2,6 @@
 {
     public class CategoryWithProductsDto
     {
-        public ICollection<ProductDto> Products { get; set; }
+        public ICollection<ProductDto>? Products { get; set; }
     }
 }

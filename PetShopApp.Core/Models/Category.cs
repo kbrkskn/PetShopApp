@@ -17,5 +17,6 @@ namespace PetShopApp.Core.Models
 
         //Foreign Key
         public ICollection<SubCategory> SubCategories { get; set; }
+        public ICollection<Product> Products { get; set; }  
     }
 }

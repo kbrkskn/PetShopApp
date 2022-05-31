@@ -26,7 +26,7 @@ namespace PetShopApp.DataAccessLayer.Repository
         public async Task<Comment> GetWithUserByIdAsync(int comId)
         {
             var comment=_db.Comments.Include(s=>s.User).FirstOrDefaultAsync(s => s.Id == comId);
-            return (await comment);
+            return (await comment)!;
         }
     }
 }
